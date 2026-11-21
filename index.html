@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de personajes</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="encabezado">
+      <h1>Buscador de personajes</h1>
+      <p>Datos obtenidos en tiempo real de la API pública de Rick and Morty.</p>
+    </header>
+
+    <main class="contenedor">
+     <form id="formulario-busqueda" class="formulario" role="search">
+  <label for="campo-nombre">Nombre del personaje</label>
+  <div class="formulario-fila">
+    <input
+      type="search"
+      id="campo-nombre"
+      name="nombre"
+      placeholder="Por ejemplo: Rick, Morty, Summer"
+      autocomplete="off"
+      maxlength="40"
+    />
+    <button type="submit" id="boton-buscar">Buscar</button>
+  </div>
+
+  <div class="formulario-filtros">
+    <div class="filtro">
+      <label for="filtro-estado">Estado</label>
+      <select id="filtro-estado">
+        <option value="">Todos</option>
+        <option value="alive">Vivo</option>
+        <option value="dead">Muerto</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+    </div>
+
+    <div class="filtro">
+      <label for="filtro-genero">Género</label>
+      <select id="filtro-genero">
+        <option value="">Todos</option>
+        <option value="female">Femenino</option>
+        <option value="male">Masculino</option>
+        <option value="genderless">Sin género</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+<p id="contador-resultados" class="mensaje" hidden></p>
+
+      <p id="mensaje-estado" class="mensaje" role="status" aria-live="polite">
+        Escribe un nombre y presiona «Buscar».
+      </p>
+
+      <section id="contenedor-resultados" class="resultados" aria-label="Resultados de la búsqueda"></section>
+    </main>
+
+    <footer class="pie">
+      Fuente de datos:
+      <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">The Rick and Morty API</a>
+      <h1>Estudiante: Luciano Junior Gomez Valdez</h1>
+    </footer>
+  </body>
+</html>
